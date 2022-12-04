@@ -1,5 +1,7 @@
 import 'package:expense_tracker/cubits/bottom_navigation/bottom_navigation_cubit.dart';
+import 'package:expense_tracker/screens/bottom_navigation_screen/widgets/abstract_bottom_nav_screen.dart';
 import 'package:expense_tracker/screens/bottom_navigation_screen/widgets/bottomAppBarItem.dart';
+import 'package:expense_tracker/screens/bottom_navigation_screen/widgets/no_nav_screen.dart';
 import 'package:expense_tracker/screens/home/home_screen.dart';
 import 'package:expense_tracker/screens/profile/profile_screen.dart';
 import 'package:expense_tracker/screens/statistics/statistics_screen.dart';
@@ -26,10 +28,10 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var allScreens = [
+    var allScreens = const [
       HomeScreen(),
       StatisticsScreen(),
-      Container(),
+      NoNavScreen(),
       WalletScreen(),
       ProfileScreen(),
     ];
@@ -43,6 +45,12 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
           child: const Icon(Icons.add),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        body: BlocBuilder<BottomNavigationCubit, BottomNavigationState>(
+          buildWhen: (p, c) => p.currentPageIndex != c.currentPageIndex,
+          builder: (context, state) {
+            return allScreens[state.currentPageIndex];
+          },
+        ),
         bottomNavigationBar: BottomAppBar(
           shape: const CircularNotchedRectangle(),
           notchMargin: 5,
@@ -50,20 +58,18 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
             //children inside bottom appbar
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: List.generate(
-                5,
-                (index) => BottomAppBarItem(
-                      pageIndex: index,
-                    )),
+            children: allScreens
+                .map(
+                  (data) =>
+                  BottomAppBarItem(
+                    pageIndex: data.pageIndex,
+                  ),
+            )
+                .toList(),
           ).paddingWithSymmetry(vertical: 10),
         ),
-        body: BlocBuilder<BottomNavigationCubit, BottomNavigationState>(
-          buildWhen: (p, c) => p.currentPageIndex != c.currentPageIndex,
-          builder: (context, state) {
-            return allScreens[state.currentPageIndex];
-          },
         ),
-      ),
+
     );
   }
 }

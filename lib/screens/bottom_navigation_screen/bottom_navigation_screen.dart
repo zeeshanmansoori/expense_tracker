@@ -6,6 +6,7 @@ import 'package:expense_tracker/screens/home/home_screen.dart';
 import 'package:expense_tracker/screens/profile/profile_screen.dart';
 import 'package:expense_tracker/screens/statistics/statistics_screen.dart';
 import 'package:expense_tracker/screens/wallet/wallet_screen.dart';
+import 'package:expense_tracker/utils/colors.dart';
 import 'package:expense_tracker/utils/widget_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,10 +40,21 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
     return BlocProvider(
       create: (context) => _cubit,
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          tooltip: 'Increment',
-          child: const Icon(Icons.add),
+        floatingActionButton: Container(
+
+          decoration: const BoxDecoration(boxShadow: [
+            BoxShadow(
+              color: CustomColors.darkGreenShadowColor,
+              blurRadius: 25,
+              offset: Offset(0, 10),
+              spreadRadius: -5
+            )
+          ]),
+          child: FloatingActionButton(
+            onPressed: () {},
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         body: BlocBuilder<BottomNavigationCubit, BottomNavigationState>(
@@ -53,23 +65,21 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
         ),
         bottomNavigationBar: BottomAppBar(
           shape: const CircularNotchedRectangle(),
-          notchMargin: 5,
+          notchMargin: 10,
           child: Row(
             //children inside bottom appbar
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: allScreens
                 .map(
-                  (data) =>
-                  BottomAppBarItem(
+                  (data) => BottomAppBarItem(
                     pageIndex: data.pageIndex,
                   ),
-            )
+                )
                 .toList(),
-          ).paddingWithSymmetry(vertical: 10),
+          ).paddingWithSymmetry(vertical: 5),
         ),
-        ),
-
+      ),
     );
   }
 }

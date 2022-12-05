@@ -40,6 +40,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.1.6
+  lottie: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -65,7 +66,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/nav_icons/
+    - assets/svg/nav_icons/
     - assets/images/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
@@ -81,10 +82,27 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: ExpenseTrackerIcons
+      fonts:
+        - asset: assets/fonts/ExpenseTracker.ttf
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/inter_light_300.ttf
+          weight: 300
+
+        - asset: assets/fonts/inter_regular_400.ttf
+          weight: 400
+
+        - asset: assets/fonts/inter_medium_500.ttf
+          weight: 500
+
+        - asset: assets/fonts/inter_semi_bold_600.ttf
+          weight: 600
+
+        - asset: assets/fonts/inter_bold_700.ttf
+          weight: 700
+
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

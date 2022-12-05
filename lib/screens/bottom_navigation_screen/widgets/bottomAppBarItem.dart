@@ -19,16 +19,25 @@ class BottomAppBarItem extends StatelessWidget {
     return BlocBuilder<BottomNavigationCubit, BottomNavigationState>(
       buildWhen: (p, c) => p.currentPageIndex != c.currentPageIndex,
       builder: (context, state) {
+
         if (pageIndex == 2) {
           return Container(
             height: 0,
           );
         }
+        var size = 20.0;
+        var isSelected = state.currentPageIndex == pageIndex;
+        if(isSelected){
+          size = 24;
+        }
         return IconButton(
             onPressed: () => cubit.onCurrentPageChanged(pageIndex),
             icon: SvgPicture.asset(
-              CommonUtils.getNavIconSvgPath(pageIndex,
-                  selected: state.currentPageIndex == pageIndex),
+              CommonUtils.getNavIconSvgPath(
+                pageIndex,
+                selected: isSelected,),
+              width: size,
+              height: size,
             ));
       },
     );

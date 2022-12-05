@@ -19,6 +19,10 @@ class CommonUtils {
         fileName = "profile";
         break;
     }
-    return "assets/nav_icons/$fileName${selected ? "_selected" : ""}.svg";
+    return "assets/svg/nav_icons/$fileName${selected ? "_selected" : ""}.svg";
+  }
+
+  static String getLottieAsset(String assetName) {
+    return "assets/lottie/$assetName.json";
   }
 }

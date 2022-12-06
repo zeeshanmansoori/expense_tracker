@@ -116,11 +116,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_web_plugins:
-    dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.0"
   js:
     dependency: transitive
     description:
@@ -163,13 +158,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-  mobile_scanner:
-    dependency: "direct main"
-    description:
-      name: mobile_scanner
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.0"
   nested:
     dependency: transitive
     description:
@@ -219,6 +207,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.4"
+  scan:
+    dependency: "direct main"
+    description:
+      name: scan
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.6.0"
   sky_engine:
     dependency: transitive
     description: flutter

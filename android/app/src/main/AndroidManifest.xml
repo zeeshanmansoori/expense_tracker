@@ -1,5 +1,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.expense_tracker">
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="upi" />
+
+        </intent>
+    </queries>
+
+    <queries>
+        <package android:name="com.google.android.apps.nbu.paisa.user" />
+        <package android:name="com.dreamplug.androidapp" />
+
+    </queries>
+
    <application
         android:label="expense_tracker"
         android:name="${applicationName}"

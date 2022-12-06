@@ -21,8 +21,10 @@ class ExpenseTrackerIcons {
   static const _kFontFam = 'ExpenseTrackerIcons';
   static const String? _kFontPkg = null;
 
-  static const IconData arrow_up = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData arrowUp = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData notification = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData arrow_down = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData chevron_up = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData arrowDown = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData chevronUp = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData send = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData qrCode = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

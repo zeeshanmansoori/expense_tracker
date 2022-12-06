@@ -3,6 +3,7 @@ import 'package:expense_tracker/screens/bottom_navigation_screen/widgets/abstrac
 import 'package:expense_tracker/screens/bottom_navigation_screen/widgets/bottomAppBarItem.dart';
 import 'package:expense_tracker/screens/bottom_navigation_screen/widgets/no_nav_screen.dart';
 import 'package:expense_tracker/screens/home/home_screen.dart';
+import 'package:expense_tracker/screens/make_payment/make_payment_screen.dart';
 import 'package:expense_tracker/screens/profile/profile_screen.dart';
 import 'package:expense_tracker/screens/statistics/statistics_screen.dart';
 import 'package:expense_tracker/screens/wallet/wallet_screen.dart';
@@ -51,7 +52,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
             )
           ]),
           child: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () =>Navigator.pushNamed(context, MakePaymentScreen.routeName),
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),

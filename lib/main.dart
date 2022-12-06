@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:expense_tracker/screens/bottom_navigation_screen/bottom_navigation_screen.dart';
+import 'package:expense_tracker/screens/make_payment/make_payment_screen.dart';
 import 'package:expense_tracker/utils/colors.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -14,9 +16,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (Platform.isAndroid) {
+
+
+    if (defaultTargetPlatform == TargetPlatform.android) {
       const SystemUiOverlayStyle systemUiOverlayStyle =
-      SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+          SystemUiOverlayStyle(statusBarColor: Colors.transparent);
       SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
     }
     return MaterialApp(
@@ -24,6 +28,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Inter',
         primaryColor: CustomColors.primaryColor,
+        inputDecorationTheme: InputDecorationTheme(
+          // errorBorder: getOutlinedBorder(CustomColors.errorColor),
+          // focusedErrorBorder: getOutlinedBorder(CustomColors.errorColor),
+          enabledBorder: getOutlinedBorder(Colors.black12),
+          focusedBorder: getOutlinedBorder(CustomColors.primaryColor),
+          filled: true,
+          fillColor: Colors.white,
+          // counterStyle: const TextStyle(color: CustomColors.errorColor),
+          // hintStyle: defaultTextStyle().copyWith(color: CustomColors.hintColor),
+          isDense: true,
+        ),
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -36,7 +51,20 @@ class MyApp extends StatelessWidget {
         primarySwatch: CustomColors.primaryMaterialColor,
       ),
       home: const Scaffold(
-        body: BottomNavigationScreen(),
+        // body: BottomNavigationScreen(),
+        body: MakePaymentScreen(),
+      ),
+      routes: {
+        MakePaymentScreen.routeName: (ctx) => const MakePaymentScreen(),
+      },
+    );
+  }
+
+  OutlineInputBorder getOutlinedBorder(Color color, {double width = 1}) {
+    return OutlineInputBorder(
+      borderSide: BorderSide(
+        color: color,
+        width: width,
       ),
     );
   }

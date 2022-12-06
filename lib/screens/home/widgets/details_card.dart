@@ -38,7 +38,7 @@ class DetailsCard extends StatelessWidget {
                       TextWithTrailingIcon(
                         text: "Total Balance",
                         icon: Icon(
-                          ExpenseTrackerIcons.chevron_up,
+                          ExpenseTrackerIcons.chevronUp,
                           color: Colors.white,
                         ),
                       ),
@@ -62,13 +62,13 @@ class DetailsCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ExpenseWidget(
-                    iconData: ExpenseTrackerIcons.arrow_down,
+                    iconData: ExpenseTrackerIcons.arrowDown,
                     title: "Income",
                     data: "\$ 1,840.00",
                     alignment: CrossAxisAlignment.start,
                   ),
                   ExpenseWidget(
-                    iconData: ExpenseTrackerIcons.arrow_up,
+                    iconData: ExpenseTrackerIcons.arrowUp,
                     title: "Expenses",
                     data: "\$ 200.00",
                     alignment: CrossAxisAlignment.end,

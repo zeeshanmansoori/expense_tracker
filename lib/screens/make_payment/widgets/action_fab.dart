@@ -21,6 +21,7 @@ class ActionFab extends StatelessWidget {
         FloatingActionButton(
           backgroundColor: Colors.white,
           onPressed: fabClicked,
+          heroTag: title,
           shape: const StadiumBorder(
             side: BorderSide(
               color: CustomColors.primaryColor,

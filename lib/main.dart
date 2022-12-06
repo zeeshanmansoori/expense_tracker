@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:expense_tracker/screens/bottom_navigation_screen/bottom_navigation_screen.dart';
 import 'package:expense_tracker/screens/make_payment/make_payment_screen.dart';
+import 'package:expense_tracker/screens/scanner/scanner_screen.dart';
 import 'package:expense_tracker/utils/colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +17,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     if (defaultTargetPlatform == TargetPlatform.android) {
       const SystemUiOverlayStyle systemUiOverlayStyle =
           SystemUiOverlayStyle(statusBarColor: Colors.transparent);
@@ -51,11 +50,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: CustomColors.primaryMaterialColor,
       ),
       home: const Scaffold(
-        // body: BottomNavigationScreen(),
-        body: MakePaymentScreen(),
+        body: BottomNavigationScreen(),
+        // body: MakePaymentScreen(),
       ),
       routes: {
         MakePaymentScreen.routeName: (ctx) => const MakePaymentScreen(),
+        ScannerScreen.routeName: (ctx) => const ScannerScreen(),
       },
     );
   }

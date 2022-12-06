@@ -1,9 +1,11 @@
+import 'package:expense_tracker/common_widgets/app_back_button.dart';
 import 'package:expense_tracker/cubits/home/home_cubit.dart';
 import 'package:expense_tracker/screens/bottom_navigation_screen/widgets/abstract_bottom_nav_screen.dart';
 import 'package:expense_tracker/screens/home/widgets/bell_icon.dart';
 import 'package:expense_tracker/screens/home/widgets/details_card.dart';
 import 'package:expense_tracker/screens/home/widgets/transaction_list.dart';
 import 'package:expense_tracker/screens/make_payment/widgets/action_fab.dart';
+import 'package:expense_tracker/screens/scanner/scanner_screen.dart';
 import 'package:expense_tracker/utils/colors.dart';
 import 'package:expense_tracker/utils/common_utils.dart';
 import 'package:expense_tracker/utils/expense_tracker_icons.dart';
@@ -37,10 +39,8 @@ class MakePaymentScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton(
-                      icon: const Icon(Icons.chevron_left),
-                      onPressed: () {},
-                      color: Colors.white,
+                    AppBackButton(
+                      onBackPressed: () => Navigator.pop(context),
                     ),
                     const Text(
                       "Make Payment",
@@ -104,7 +104,7 @@ class MakePaymentScreen extends StatelessWidget {
                           ActionFab(
                             title: "Pay",
                             iconData: ExpenseTrackerIcons.qrCode,
-                            fabClicked: () {},
+                            fabClicked: () => Navigator.pushNamed(context, ScannerScreen.routeName),
                           ),
                           const Spacer(
                             flex: 1,

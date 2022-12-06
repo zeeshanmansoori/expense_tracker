@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class CommonUtils {
   static String getImageFromAsset(String assetName) {
     return "assets/images/$assetName.png";
@@ -24,5 +26,19 @@ class CommonUtils {
 
   static String getLottieAsset(String assetName) {
     return "assets/lottie/$assetName.json";
+  }
+
+  static void showSnackBar(BuildContext context, String? msg, {Duration? duration}) {
+    if (msg == null || msg == "") return;
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          content: Text(msg),
+          behavior: SnackBarBehavior.floating,
+          duration: duration ?? const Duration(milliseconds: 3000),
+          //backgroundColor: Colors.red,
+        ),
+      );
   }
 }

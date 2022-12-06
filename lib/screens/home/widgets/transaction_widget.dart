@@ -1,3 +1,4 @@
+import 'package:expense_tracker/common_widgets/image_container.dart';
 import 'package:expense_tracker/models/transaction_model.dart';
 import 'package:expense_tracker/utils/colors.dart';
 import 'package:expense_tracker/utils/common_utils.dart';
@@ -16,17 +17,8 @@ class TransactionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: CustomColors.alabaster,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Image.asset(
-            CommonUtils.getImageFromAsset("paypal"),
-            width: 30,
-            height: 30,
-          ),
+        ImageContainerWidget(
+          imagePath: CommonUtils.getImageFromAsset("paypal"),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,

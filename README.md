@@ -1,16 +1,14 @@
 # expense_tracker
 
-Track your expneses
+An app to Track your expneses.
 
-## Getting Started
+##  Work in progress
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Libraries
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Result
+
+| <img src="screenshots/l_home.jpg" width="200"/> | <img src="screenshots/l_songs.jpg" width="200"/> | <img src="screenshots/l_album.jpg" width="200"/> | 

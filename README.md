@@ -11,4 +11,6 @@ An app to Track your expneses.
 
 ## Result
 
-| <img src="screenshots/l_home.jpg" width="200"/> | <img src="screenshots/l_songs.jpg" width="200"/> | <img src="screenshots/l_album.jpg" width="200"/> | 
+| <img src="screenshots/home.jpg" width="200"/> | <img src="screenshots/make_payment.jpg" width="200"/> | <img src="screenshots/scanner.jpg" width="200"/> | 
+|----|----|
+| <img src="screenshots/stas.jpg" width="200"/> | <img src="screenshots/wallet.jpg" width="200"/> | <img src="screenshots/profile.jpg" width="200"/> | 

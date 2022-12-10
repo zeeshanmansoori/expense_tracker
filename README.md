@@ -2,7 +2,7 @@
 
 An app to Track your expneses.
 
-##  Work in progress
+## ⚠️⚠️⚠️ Work in progress ⚠️⚠️⚠️
 
 
 ## Features

@@ -1,6 +1,6 @@
 # expense_tracker
 
-An app to Track your expneses.
+An app to Track your expneses and make payments.
 
 ## ⚠️⚠️⚠️ Work in progress ⚠️⚠️⚠️
 
